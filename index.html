@@ -7,155 +7,195 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="assets/images/logo.png" alt="XAPI Logo">
+                <img src="assets/images/logo.png" alt="XAPI">
             </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">Über uns</a></li>
                 <li><a href="#tech">Technologie</a></li>
-                <li><a href="#contact">Kontakt</a></li>
             </ul>
-            <a href="#contact" class="btn btn-primary">Projekt starten</a>
-            <button class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a href="#contact" class="btn btn-nav">Kontakt</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <span class="hero-badge">KI-gestützte Digitalisierung</span>
-            <h1>Die Zukunft Ihres<br><span class="gradient-text">Unternehmens</span> beginnt hier</h1>
-            <p class="hero-subtitle">Wir verbinden künstliche Intelligenz mit digitaler Transformation — maßgeschneiderte Lösungen, die Ihr Business auf das nächste Level bringen.</p>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Jetzt verfügbar</span>
+            </div>
             
+            <h1>
+                <span class="hero-line">Intelligente</span>
+                <span class="hero-line gradient-text">Digitalisierung</span>
+                <span class="hero-line">für Ihr Business.</span>
+            </h1>
+            
+            <p class="hero-sub">
+                KI-gestützte Lösungen, die Prozesse automatisieren, 
+                Kosten senken und Ihr Unternehmen transformieren.
+            </p>
+
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Projekt starten</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#services" class="btn btn-ghost">Mehr erfahren</a>
+            </div>
+
+            <!-- Floating Stats -->
             <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+                <div class="stat-card glass">
+                    <span class="stat-value">50+</span>
                     <span class="stat-label">Projekte</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+                <div class="stat-card glass">
+                    <span class="stat-value">98%</span>
                     <span class="stat-label">Zufriedenheit</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number" data-target="24">0</span><span class="stat-suffix">/7</span>
+                <div class="stat-card glass">
+                    <span class="stat-value">24/7</span>
                     <span class="stat-label">Support</span>
                 </div>
             </div>
-
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary btn-lg">Kostenlose Beratung</a>
-                <a href="#services" class="btn btn-outline btn-lg">Unsere Services</a>
-            </div>
         </div>
 
-        <!-- Floating Tech Badges -->
-        <div class="tech-scroll">
-            <div class="tech-track">
-                <span class="tech-badge">🤖 GPT-4</span>
-                <span class="tech-badge">🧠 Machine Learning</span>
-                <span class="tech-badge">⚡ Automation</span>
-                <span class="tech-badge">☁️ Cloud</span>
-                <span class="tech-badge">🔗 API Integration</span>
-                <span class="tech-badge">📊 Data Analytics</span>
-                <span class="tech-badge">🛡️ Cybersecurity</span>
-                <span class="tech-badge">💬 Chatbots</span>
-                <span class="tech-badge">🤖 GPT-4</span>
-                <span class="tech-badge">🧠 Machine Learning</span>
-                <span class="tech-badge">⚡ Automation</span>
-                <span class="tech-badge">☁️ Cloud</span>
-                <span class="tech-badge">🔗 API Integration</span>
-                <span class="tech-badge">📊 Data Analytics</span>
-                <span class="tech-badge">🛡️ Cybersecurity</span>
-                <span class="tech-badge">💬 Chatbots</span>
+        <!-- Hero Visual -->
+        <div class="hero-visual">
+            <div class="visual-container">
+                <div class="floating-card card-1 glass">
+                    <div class="card-icon">🤖</div>
+                    <span>KI-Assistent aktiv</span>
+                </div>
+                <div class="floating-card card-2 glass">
+                    <div class="card-icon">⚡</div>
+                    <span>3.2s Antwortzeit</span>
+                </div>
+                <div class="floating-card card-3 glass">
+                    <div class="card-icon">📈</div>
+                    <span>+147% Effizienz</span>
+                </div>
+                <div class="main-visual glass">
+                    <div class="visual-header">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="visual-content">
+                        <div class="chat-message bot">
+                            <span class="avatar">X</span>
+                            <div class="message">Wie kann ich Ihnen helfen?</div>
+                        </div>
+                        <div class="chat-message user">
+                            <div class="message">Analysiere unsere Q4 Daten</div>
+                        </div>
+                        <div class="chat-message bot">
+                            <span class="avatar">X</span>
+                            <div class="message typing">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Logos/Trust Section -->
+    <section class="trust-section">
+        <p class="trust-label">Technologien die wir nutzen</p>
+        <div class="trust-logos">
+            <span class="trust-logo">OpenAI</span>
+            <span class="trust-logo">Google Cloud</span>
+            <span class="trust-logo">AWS</span>
+            <span class="trust-logo">Azure</span>
+            <span class="trust-logo">Anthropic</span>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <span class="section-badge">SERVICES</span>
-            <h2>Was wir für Sie <span class="gradient-text">leisten</span></h2>
-            <p class="section-subtitle">Von der Strategie bis zur Implementierung — alles aus einer Hand.</p>
+            <div class="section-header">
+                <span class="section-tag">Services</span>
+                <h2>Was wir <span class="gradient-text">erschaffen</span></h2>
+                <p>Maßgeschneiderte Lösungen für die digitale Transformation.</p>
+            </div>
 
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <h3>KI-Assistenten & Chatbots</h3>
-                    <p>Intelligente Chatbots und virtuelle Assistenten, die Ihre Kundenbetreuung revolutionieren und rund um die Uhr verfügbar sind.</p>
-                    <ul class="service-features">
-                        <li>GPT-Integration</li>
-                        <li>Multi-Channel Support</li>
-                        <li>Selbstlernend</li>
-                    </ul>
+                <div class="service-card glass">
+                    <div class="service-number">01</div>
+                    <div class="service-icon-wrap">
+                        <span class="service-icon">🤖</span>
+                    </div>
+                    <h3>KI-Assistenten</h3>
+                    <p>Intelligente Chatbots und virtuelle Assistenten, die Ihre Kunden 24/7 betreuen.</p>
+                    <div class="service-tags">
+                        <span>GPT-4</span>
+                        <span>Claude</span>
+                        <span>Custom AI</span>
+                    </div>
                 </div>
 
-                <div class="service-card featured">
-                    <div class="featured-badge">BELIEBT</div>
-                    <div class="service-icon">⚡</div>
-                    <h3>Prozessautomatisierung</h3>
-                    <p>Automatisieren Sie wiederkehrende Aufgaben und sparen Sie bis zu 70% Zeit bei administrativen Prozessen.</p>
-                    <ul class="service-features">
-                        <li>Workflow-Automation</li>
-                        <li>RPA-Lösungen</li>
-                        <li>API-Integrationen</li>
-                    </ul>
+                <div class="service-card glass featured">
+                    <div class="service-number">02</div>
+                    <div class="featured-tag">Beliebt</div>
+                    <div class="service-icon-wrap">
+                        <span class="service-icon">⚡</span>
+                    </div>
+                    <h3>Automatisierung</h3>
+                    <p>Workflows automatisieren und bis zu 70% Zeit bei repetitiven Aufgaben sparen.</p>
+                    <div class="service-tags">
+                        <span>Workflows</span>
+                        <span>RPA</span>
+                        <span>APIs</span>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Datenanalyse & BI</h3>
-                    <p>Verwandeln Sie Ihre Daten in wertvolle Insights mit KI-gestützter Analyse und interaktiven Dashboards.</p>
-                    <ul class="service-features">
-                        <li>Predictive Analytics</li>
-                        <li>Echtzeit-Dashboards</li>
-                        <li>KI-Reports</li>
-                    </ul>
+                <div class="service-card glass">
+                    <div class="service-number">03</div>
+                    <div class="service-icon-wrap">
+                        <span class="service-icon">📊</span>
+                    </div>
+                    <h3>Data Analytics</h3>
+                    <p>Daten in Erkenntnisse verwandeln mit KI-gestützter Analyse und Visualisierung.</p>
+                    <div class="service-tags">
+                        <span>Dashboards</span>
+                        <span>Predictive</span>
+                        <span>ML</span>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🔄</div>
-                    <h3>Digitale Transformation</h3>
-                    <p>Wir begleiten Sie auf dem Weg zur digitalen Exzellenz — von der Strategie bis zur erfolgreichen Umsetzung.</p>
-                    <ul class="service-features">
-                        <li>Digitalisierungsstrategie</li>
-                        <li>Change Management</li>
-                        <li>Schulungen</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">☁️</div>
-                    <h3>Cloud & Infrastruktur</h3>
-                    <p>Moderne Cloud-Architekturen, die skalierbar, sicher und kosteneffizient sind.</p>
-                    <ul class="service-features">
-                        <li>AWS / Azure / GCP</li>
-                        <li>DevOps</li>
-                        <li>Microservices</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <h3>KI-Beratung</h3>
-                    <p>Strategische Beratung zur Integration von KI in Ihr Geschäftsmodell — von der Ideenfindung bis zum ROI.</p>
-                    <ul class="service-features">
-                        <li>Use-Case Analyse</li>
-                        <li>Machbarkeitsstudien</li>
-                        <li>Implementierungsplan</li>
-                    </ul>
+                <div class="service-card glass">
+                    <div class="service-number">04</div>
+                    <div class="service-icon-wrap">
+                        <span class="service-icon">🔄</span>
+                    </div>
+                    <h3>Transformation</h3>
+                    <p>Ganzheitliche digitale Transformation von der Strategie bis zur Umsetzung.</p>
+                    <div class="service-tags">
+                        <span>Strategie</span>
+                        <span>Change</span>
+                        <span>Beratung</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -164,47 +204,75 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="about-grid">
+            <div class="about-layout">
                 <div class="about-content">
-                    <span class="section-badge">ÜBER XAPI</span>
-                    <h2>Technologie trifft <span class="gradient-text">Vision</span></h2>
-                    <p>XAPI ist keine klassische Agentur — wir sind Ihr Partner für die digitale Zukunft. Unser Team aus KI-Experten, Entwicklern und Strategen arbeitet daran, Ihr Unternehmen fit für morgen zu machen.</p>
-                    <p>Wir glauben, dass jedes Unternehmen von KI profitieren kann — unabhängig von Größe oder Branche. Deshalb entwickeln wir Lösungen, die nicht nur technisch brillant, sondern auch wirtschaftlich sinnvoll sind.</p>
+                    <span class="section-tag">Über XAPI</span>
+                    <h2>Wir bauen die <span class="gradient-text">Zukunft</span></h2>
+                    <p class="about-lead">
+                        XAPI ist Ihr Partner für intelligente Digitalisierung. 
+                        Wir verbinden modernste KI-Technologie mit durchdachter Strategie.
+                    </p>
                     
                     <div class="about-features">
-                        <div class="about-feature">
-                            <span class="feature-icon">✓</span>
-                            <span>Individuelle Lösungen</span>
+                        <div class="feature-item">
+                            <div class="feature-icon glass">✓</div>
+                            <div>
+                                <strong>Made in Germany</strong>
+                                <span>Deutsche Qualität & DSGVO-konform</span>
+                            </div>
                         </div>
-                        <div class="about-feature">
-                            <span class="feature-icon">✓</span>
-                            <span>Deutsche Qualität</span>
+                        <div class="feature-item">
+                            <div class="feature-icon glass">✓</div>
+                            <div>
+                                <strong>Individuelle Lösungen</strong>
+                                <span>Keine Templates, nur maßgeschneidert</span>
+                            </div>
                         </div>
-                        <div class="about-feature">
-                            <span class="feature-icon">✓</span>
-                            <span>DSGVO-konform</span>
-                        </div>
-                        <div class="about-feature">
-                            <span class="feature-icon">✓</span>
-                            <span>Transparente Preise</span>
+                        <div class="feature-item">
+                            <div class="feature-icon glass">✓</div>
+                            <div>
+                                <strong>End-to-End</strong>
+                                <span>Von der Idee bis zum fertigen Produkt</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="about-visual">
-                    <div class="visual-card">
-                        <div class="visual-header">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
+                    <div class="about-card glass">
+                        <div class="about-card-header">
+                            <img src="assets/images/logo.png" alt="XAPI" class="about-logo">
+                            <span class="status-badge">
+                                <span class="status-dot"></span>
+                                Online
+                            </span>
                         </div>
-                        <div class="visual-content">
-                            <div class="code-line"><span class="code-keyword">const</span> erfolg = <span class="code-function">transform</span>({</div>
-                            <div class="code-line">  unternehmen: <span class="code-string">"Ihr Business"</span>,</div>
-                            <div class="code-line">  technologie: <span class="code-string">"KI + Digital"</span>,</div>
-                            <div class="code-line">  partner: <span class="code-string">"XAPI"</span></div>
-                            <div class="code-line">});</div>
-                            <div class="code-line"></div>
-                            <div class="code-line"><span class="code-comment">// Ergebnis: 🚀</span></div>
+                        <div class="about-metrics">
+                            <div class="metric">
+                                <span class="metric-value">50+</span>
+                                <span class="metric-label">Projekte</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">12</span>
+                                <span class="metric-label">Experten</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">3</span>
+                                <span class="metric-label">Jahre</span>
+                            </div>
+                        </div>
+                        <div class="about-graph">
+                            <svg viewBox="0 0 200 60" class="growth-chart">
+                                <defs>
+                                    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#e63946;stop-opacity:0.3"/>
+                                        <stop offset="100%" style="stop-color:#e63946;stop-opacity:0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,50 Q30,45 50,40 T100,25 T150,15 T200,5" fill="none" stroke="#e63946" stroke-width="2"/>
+                                <path d="M0,50 Q30,45 50,40 T100,25 T150,15 T200,5 L200,60 L0,60 Z" fill="url(#chartGradient)"/>
+                            </svg>
+                            <span class="graph-label">Wachstum 2024</span>
                         </div>
                     </div>
                 </div>
@@ -215,40 +283,35 @@
     <!-- Tech Section -->
     <section id="tech" class="tech">
         <div class="container">
-            <span class="section-badge">TECHNOLOGIE</span>
-            <h2>Modernste <span class="gradient-text">Technologien</span></h2>
-            <p class="section-subtitle">Wir setzen auf bewährte und zukunftssichere Technologien.</p>
+            <div class="section-header center">
+                <span class="section-tag">Stack</span>
+                <h2>Modernste <span class="gradient-text">Technologie</span></h2>
+            </div>
 
             <div class="tech-grid">
-                <div class="tech-card">
-                    <div class="tech-card-icon">🧠</div>
-                    <h4>OpenAI / GPT</h4>
-                    <p>Neueste Sprachmodelle für intelligente Anwendungen</p>
+                <div class="tech-item glass">
+                    <span class="tech-icon">🧠</span>
+                    <span class="tech-name">OpenAI</span>
                 </div>
-                <div class="tech-card">
-                    <div class="tech-card-icon">☁️</div>
-                    <h4>AWS / Azure</h4>
-                    <p>Enterprise-Cloud für maximale Skalierbarkeit</p>
+                <div class="tech-item glass">
+                    <span class="tech-icon">☁️</span>
+                    <span class="tech-name">AWS</span>
                 </div>
-                <div class="tech-card">
-                    <div class="tech-card-icon">⚛️</div>
-                    <h4>React / Next.js</h4>
-                    <p>Moderne Frontend-Frameworks</p>
+                <div class="tech-item glass">
+                    <span class="tech-icon">⚛️</span>
+                    <span class="tech-name">React</span>
                 </div>
-                <div class="tech-card">
-                    <div class="tech-card-icon">🐍</div>
-                    <h4>Python / FastAPI</h4>
-                    <p>Leistungsstarke Backend-Entwicklung</p>
+                <div class="tech-item glass">
+                    <span class="tech-icon">🐍</span>
+                    <span class="tech-name">Python</span>
                 </div>
-                <div class="tech-card">
-                    <div class="tech-card-icon">🐳</div>
-                    <h4>Docker / K8s</h4>
-                    <p>Container-Orchestrierung auf höchstem Niveau</p>
+                <div class="tech-item glass">
+                    <span class="tech-icon">🐳</span>
+                    <span class="tech-name">Docker</span>
                 </div>
-                <div class="tech-card">
-                    <div class="tech-card-icon">📊</div>
-                    <h4>TensorFlow / PyTorch</h4>
-                    <p>Führende ML-Frameworks</p>
+                <div class="tech-item glass">
+                    <span class="tech-icon">📊</span>
+                    <span class="tech-name">TensorFlow</span>
                 </div>
             </div>
         </div>
@@ -257,29 +320,24 @@
     <!-- CTA Section -->
     <section id="contact" class="cta">
         <div class="container">
-            <div class="cta-card">
-                <h2>Bereit für die <span class="gradient-text">Zukunft</span>?</h2>
-                <p>Lassen Sie uns gemeinsam herausfinden, wie KI und Digitalisierung Ihr Unternehmen voranbringen können.</p>
-                
-                <form class="contact-form">
-                    <div class="form-row">
-                        <input type="text" placeholder="Ihr Name" required>
-                        <input type="email" placeholder="Ihre E-Mail" required>
-                    </div>
-                    <input type="text" placeholder="Ihr Unternehmen">
-                    <textarea placeholder="Erzählen Sie uns von Ihrem Projekt..." rows="4"></textarea>
-                    <button type="submit" class="btn btn-primary btn-lg">Nachricht senden</button>
-                </form>
-
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <span>info@xapi.de</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>📞</span>
-                        <span>+49 123 456 789</span>
-                    </div>
+            <div class="cta-card glass">
+                <div class="cta-content">
+                    <h2>Bereit zu <span class="gradient-text">starten</span>?</h2>
+                    <p>Lassen Sie uns über Ihr Projekt sprechen.</p>
+                    
+                    <form class="contact-form">
+                        <div class="form-grid">
+                            <input type="text" placeholder="Name" class="glass-input" required>
+                            <input type="email" placeholder="E-Mail" class="glass-input" required>
+                        </div>
+                        <textarea placeholder="Ihr Projekt..." class="glass-input" rows="4"></textarea>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Nachricht senden</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -290,22 +348,19 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="assets/images/logo.png" alt="XAPI Logo" class="footer-logo">
-                    <p>KI & Digitalisierung für die Zukunft Ihres Unternehmens.</p>
+                    <img src="assets/images/logo.png" alt="XAPI" class="footer-logo">
+                    <p>KI & Digitalisierung</p>
                 </div>
                 <div class="footer-links">
                     <a href="#services">Services</a>
                     <a href="#about">Über uns</a>
-                    <a href="#tech">Technologie</a>
                     <a href="#contact">Kontakt</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 XAPI. Alle Rechte vorbehalten.</p>
-                <div class="footer-legal">
                     <a href="#">Impressum</a>
                     <a href="#">Datenschutz</a>
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 XAPI. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
