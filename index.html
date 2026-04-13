@@ -327,10 +327,20 @@
                     
                     <form class="contact-form">
                         <div class="form-grid">
-                            <input type="text" placeholder="Name" class="glass-input" required>
-                            <input type="email" placeholder="E-Mail" class="glass-input" required>
+                            <input name="name" type="text" placeholder="Name" class="glass-input" required>
+                            <input name="email" type="email" placeholder="E-Mail" class="glass-input" required>
                         </div>
-                        <textarea placeholder="Ihr Projekt..." class="glass-input" rows="4"></textarea>
+                        <div class="form-grid">
+                            <input name="telefon" type="tel" placeholder="Telefon (optional)" class="glass-input">
+                            <input name="firma" type="text" placeholder="Firma (optional)" class="glass-input">
+                        </div>
+                        <div id="ref-code-wrapper" style="display:none;">
+                            <input name="ref_code" id="ref-code-input" type="text" placeholder="Empfehlungscode" class="glass-input" readonly>
+                            <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px;">
+                                Sie wurden empfohlen — vielen Dank!
+                            </p>
+                        </div>
+                        <textarea name="nachricht" placeholder="Ihr Projekt..." class="glass-input" rows="4"></textarea>
                         <button type="submit" class="btn btn-primary btn-full">
                             <span>Nachricht senden</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

@@ -91,32 +91,64 @@ function initSmoothScroll() {
 // Contact Form
 // ========================================
 
+const DASHBOARD_API = 'https://xapi-dashboard.vercel.app/api/empfehlung/submit';
+
 function initContactForm() {
     const form = document.querySelector('.contact-form');
-    
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const btn = form.querySelector('button[type="submit"]');
-            const originalContent = btn.innerHTML;
-            
-            // Loading state
-            btn.innerHTML = `
-                <span>Wird gesendet...</span>
-                <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" opacity="0.3"/>
-                    <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round">
-                        <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
-                    </path>
-                </svg>
-            `;
-            btn.disabled = true;
-            
-            // Simulate send (replace with actual API call)
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            // Success state
+    if (!form) return;
+
+    // Referral-Code aus URL holen und Feld vorausfuellen
+    const params = new URLSearchParams(window.location.search);
+    const refCode = params.get('ref');
+    if (refCode) {
+        const wrapper = document.getElementById('ref-code-wrapper');
+        const input = document.getElementById('ref-code-input');
+        if (wrapper && input) {
+            input.value = refCode;
+            wrapper.style.display = 'block';
+        }
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const btn = form.querySelector('button[type="submit"]');
+        const originalContent = btn.innerHTML;
+
+        btn.innerHTML = `
+            <span>Wird gesendet...</span>
+            <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" opacity="0.3"/>
+                <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                </path>
+            </svg>
+        `;
+        btn.disabled = true;
+
+        const formData = new FormData(form);
+        const payload = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            telefon: formData.get('telefon') || null,
+            firma: formData.get('firma') || null,
+            nachricht: formData.get('nachricht') || null,
+            ref_code: formData.get('ref_code') || null,
+        };
+
+        let success = false;
+        try {
+            const res = await fetch(DASHBOARD_API, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
+            success = res.ok;
+        } catch (err) {
+            success = false;
+        }
+
+        if (success) {
             btn.innerHTML = `
                 <span>Gesendet!</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -124,16 +156,22 @@ function initContactForm() {
                 </svg>
             `;
             btn.style.background = '#28c840';
-            
-            // Reset after delay
             setTimeout(() => {
                 btn.innerHTML = originalContent;
                 btn.style.background = '';
                 btn.disabled = false;
                 form.reset();
             }, 3000);
-        });
-    }
+        } else {
+            btn.innerHTML = `<span>Fehler - bitte erneut versuchen</span>`;
+            btn.style.background = '#ff4444';
+            setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 3000);
+        }
+    });
 }
 
 // ========================================
